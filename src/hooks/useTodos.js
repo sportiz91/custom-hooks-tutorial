@@ -13,7 +13,7 @@ const useTodos = (initialTodos) => {
     setTodos(todos.filter((todo) => todo.id !== todoId));
   };
 
-  return [todos, addTodo, deleteTodo];
+  return [todos, setTodos, addTodo, deleteTodo];
 };
 
 export default useTodos;

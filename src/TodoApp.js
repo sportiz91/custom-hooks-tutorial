@@ -8,7 +8,7 @@ const initialTodos = [
 ];
 
 const TodoApp = () => {
-  const [todos, addTodo, deleteTodo] = useTodos(initialTodos);
+  const [todos, setTodos, addTodo, deleteTodo] = useTodos(initialTodos);
   const [input, setInput] = useState("");
 
   const handleChange = (e) => {
