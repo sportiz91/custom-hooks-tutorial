@@ -1,6 +1,7 @@
 import "./App.css";
 import Counter from "./Counter";
 import useSelecting from "./hooks/useSelecting";
+import TodoApp from "./TodoApp";
 
 function App() {
   const [appToRender, counter, todoapp, setFalse] = useSelecting();
@@ -22,7 +23,9 @@ function App() {
     <div className="layout">
       {appToRender.intro ? (
         <div className="layout">
-          <label htmlFor="dropdown">Choose the App to render</label>
+          <label htmlFor="dropdown">
+            Choose <strong>App to render</strong>
+          </label>
           <select name="apps" id="dropdown" onChange={handleChange}>
             <option value="Select">Select option</option>
             <option value="Counter">Counter App</option>
@@ -31,25 +34,13 @@ function App() {
         </div>
       ) : appToRender.counter ? (
         <Counter />
+      ) : appToRender.todoapp ? (
+        <TodoApp />
       ) : (
         ""
       )}
     </div>
   );
-
-  // {
-  //   appToRender.intro ? (
-  //     <div className="layout">
-  //       <label htmlFor="dropdown">Choose the App to render</label>
-  //       <select name="apps" id="dropdown" onChange={handleChange}>
-  //         <option value="Counter">Counter App</option>
-  //         <option value="Todo">Todo App</option>
-  //       </select>
-  //     </div>
-  //   ) : (
-  //     ""
-  //   );
-  // }
 }
 
 export default App;
